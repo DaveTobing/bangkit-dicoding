@@ -3,4 +3,4 @@ env
 
 # Ignore any directory named "venv"
 venv/
-.devcontainer
+.devcontainer/

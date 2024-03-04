@@ -43,9 +43,9 @@ def main():
 
     # Display selected visualization
     if selected_chart == 'User Distribution (Day)':
-        user_distribution_chart(df_day)
+        user_distribution_chart(df_day.groupby('weekday')[['casual', 'registered']].sum().reset_index())
     elif selected_chart == 'User Distribution (Hour)':
-        user_distribution_chart(df_hour)
+        user_distribution_chart(df_hour.groupby('weekday')[['casual', 'registered']].sum().reset_index())
     elif selected_chart == 'Monthly Demand (Day)':
         monthly_demand_chart(df_day.groupby('mnth')['cnt'].sum().reset_index(), 'Bike Rental Demand by Month (Day)', 'mnth')
     elif selected_chart == 'Hourly Demand (Hour)':
